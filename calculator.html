@@ -1,0 +1,61 @@
+<!DOCTYPE html> 
+
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=0.5"><title>Simple Calculator</title></head>
+
+<style> <!-- styling the look of the calculator -->
+table {text-align:center; width: 400px; height: 500px; border: solid green 2px;border-radius:15px;}
+input {text-align:right; width: 400px; height: 50px;font-size:29px;font-family:san-serif;}
+button{text-align:center; width: 50px; height: 50px;font-size:29px;border-radius:50px;border: solid grey 1.5px;font-family:san-serif;}
+button:hover {background-color:silver;-webkit-transform:translateY(-6px);} <!-- hover on a button when the mouse is placed on its -->
+tr{background-color:silver;}
+</style>
+
+<script> <!-- Javascript -->
+function show(num) <!-- to show value in the text box -->
+{
+	document.getElementById("ans").value += num 
+}
+
+function calculate() <!-- calculates the value and show the answer in the text box -->
+{
+ 	let a = document.getElementById("ans").value 
+                let b = eval(a) 
+                document.getElementById("ans").value = b
+}
+</script>
+
+<body>
+<div style="font-family:san-serif;font-size:30px;text-decoration:underline;text-align:center;">Simple Calculator</div>
+<br>
+
+<center><table border=1 cellspacing=1px cellspadding=1px>
+<tr><td colspan=4><input type=text id="ans"></input></td></tr>
+
+<tr>
+<td><button onclick=show('7')>7</button></td>
+<td><button onclick=show('8')>8</button></td>
+<td><button onclick=show('9')>9</button></td>
+<td><button onclick="ans.value = ' '"> AC</button></td> <!-- to clear the text box -->
+</tr>
+
+<tr>
+<td><button onclick=show('4')>4</button></td>
+<td><button onclick=show('5')>5</button></td>
+<td><button onclick=show('6')>6</button></td>
+<td><button onclick=show('+')>+</button></td>
+</tr>
+
+<tr>
+<td><button onclick=show('1')>1</button></td>
+<td><button onclick=show('2')>2</button></td>
+<td><button onclick=show('3')>3</button></td>
+<td><button onclick=show('-')>-</button></td>
+</tr>
+
+<tr>
+<td><button onclick=show('0')>0</button></td>
+<td><button onclick=show('/')>/</button></td>
+<td><button onclick=show('*')>*</button></td>
+<td><button onclick=calculate()>=</button></td>
+</tr>
+</table></center></body></html>
